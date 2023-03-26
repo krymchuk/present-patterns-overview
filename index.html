@@ -1,40 +1,627 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>Using Design Patterns for building Web Applications</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/night.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h3>Using Design Patterns for building Web Applications</h3>
+          <br />
+          <h5>The tale about patterns in Frontend</h5>
+          <br />
+          <br />
+          <br />
+          <small>Bohdan Krymchuk</small>
+        </section>
+        <section>
+          <section>
+            <h4>What is Design Pattern anyway?</h4>
+            <aside class="notes">
+              Resolves problems witch someone before has faced
+            </aside>
+          </section>
+          <section>
+            <img src="https://i.redd.it/h7nt4keyd7oy.jpg" alt="Bad parts" />
+            <aside class="notes">
+              <ul>
+                <li>
+                  JS needs patterns because it is poorly typed language.
+                </li>
+                <li>JS was created in two weeks</li>
+                <li>It's ease to write bad code</li>
+              </ul>
+            </aside>
+          </section>
+          <section class="h-full flex justify-center align">
+            <iframe
+              width="100%"
+              height="80%"
+              src="https://www.youtube.com/embed/JEpY9C49sqU"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </section>
+          <section>
+            <img class="m-auto" src="assets/pattern-language.png" alt="" />
+          </section>
+          <section>
+            <img class="m-auto" src="assets/gang-of-four.png" alt="" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <div class="flex justify-center gap-x-8">
+              <ul class="w-full">
+                <p>Problem</p>
+                <li class="fragment text-lg" data-fragment-index="1">
+                  Designing service Layers
+                </li>
+                <li class="fragment text-lg" data-fragment-index="3">
+                  Problem with Complicated Object Interfaces
+                </li>
+                <li class="fragment text-lg" data-fragment-index="5">
+                  Visibility into state changes
+                </li>
+              </ul>
+              <ul class="w-full">
+                <p>Solution</p>
+                <li class="fragment text-lg" data-fragment-index="2">
+                  Module Pattern, Singleton, Dependency injection
+                </li>
+                <li class="fragment text-lg" data-fragment-index="4">
+                  Facade pattern
+                </li>
+                <li class="fragment text-lg" data-fragment-index="6">
+                  Observer pattern
+                </li>
+              </ul>
+            </div>
+            <aside class="notes">
+              Facade is JQuery (working with DOM is more simpler)
+            </aside>
+          </section>
+          <section>
+            <p class="fragment">It solves a problem</p>
+            <p class="fragment">It is a proven concept</p>
+            <p class="fragment">The solution is not obvious</p>
+            <p class="fragment">It describes a relationship</p>
+            <p class="fragment">Human components is important</p>
+            <aside class="notes">
+              This is a proven concept that works in many different areas, projects, applications, etc.
+              <br><br>
+              Our solutions are not obvious.
+              <br><br>
+               Object relationships or data structures and how they interact with each other.
+              <br><br>
+              Terminology is also important, use names that everyone will understand.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <h3>Types of design patterns</h3>
+          <br>
+          <div class="flex justify-around">
+            <div>
+              <h5 class="fragment !text-sky-400">Creational</h5>
+              <ul class="list-decimal text-2xl">
+                <li class="fragment">Constructor</li>
+                <li class="fragment">Module</li>
+                <li class="fragment">Factory</li>
+                <li class="fragment">Prototype</li>
+                <li class="fragment">Singleton</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="fragment !text-sky-400">Structural</h5>
+              <ul class="list-decimal text-2xl">
+                <li class="fragment">Decorator</li>
+                <li class="fragment">Facade</li>
+                <li class="fragment">Adapter</li>
+                <li class="fragment">Bridge</li>
+                <li class="fragment">Flyweight</li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="fragment !text-sky-400">Behavioral</h5>
+              <ul class="list-decimal text-2xl">
+                <li class="fragment">Command</li>
+                <li class="fragment">State</li>
+                <li class="fragment">Observer</li>
+              </ul>
+            </div>
+            <aside class="notes">
+              creational - intended to create instances of objects, in one way or another.
+              <br>
+              constructor - js has several ways to create an object, more on that later.
+              <br>
+              module - about how to group methods into separate ones
+              <br>
+              <br>
+              Structural patterns show different ways of building relationships between objects.
+              <br>
+              <br>
+              Behavior patterns take care of efficient communication between objects.
+            </aside>
+          </div>
+        </section>
+        <section>
+          <h3>Creating a New object</h3>
+          <pre><code data-line-numbers="1|2|3" data-noescape data-trim>
+              let obj = {};
+              let nextObj = Object.create(Object.prototype);
+              let lastObj = new Object();
+          </code></pre>
+        </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <!--  Pattern examples  -->
+
+        <!-- Module pattern -->
+        <section>
+          <h3>Module pattern</h3>
+          <pre class="!text-sm">
+            <code data-trim>
+              // user.service.ts
+
+              async function getProfile() {
+                return await api.get('/user/userinfo').then((response) => {
+                  return response.data;
+                });
+              }
+
+              async function updateProfile(params: UserProfile) {
+                return await api.post('/user/update', params).then((response) => {
+                  return response.data;
+                });
+              }
+
+              async function editUser(id: number, user: UserFormValues) {
+                return await api.post(`/user/update:${id}`, user).then((response) => {
+                  return response.data;
+                });
+              }
+
+              async function deleteUser(id: number) {
+                return await api.delete(`/user/deleteuser:${id}`);
+              }
+
+              export const UserService = {
+                getProfile,
+                updateProfile,
+                editUser,
+                deleteUser,
+              };
+            </code>
+          </pre>
+          <aside class="notes">
+            ES2015 introduced built-in JavaScript modules. A module is a file containing JavaScript code,
+            with some difference in behavior compared to a normal script.
+            <br>
+            <br>
+            With the module pattern, we can encapsulate parts of our code that should not be publicly exposed.
+            This prevents accidental name collision and global scope pollution,
+            which makes working with multiple dependencies and namespaces less risky.
+          </aside>
+        </section>
+
+        <!-- Prototype pattern -->
+        <section>
+          <section>
+          <h3>Prototype pattern</h3>
+          <pre>
+            <code data-line-numbers="1-3|5-10" data-noescape data-trim>
+              class Dog extends Animal {
+                ...
+              }
+
+              const dog = {
+                bark() {
+                  console.log('Woof!');
+                }
+              };
+              const pet = Object.create(dog);
+            </code>
+          </pre>
+          <aside class="notes">
+            The prototype pattern allows us to easily let objects access and inherit properties from other objects.
+            Since the prototype chain allows us to access properties that aren't directly defined on the object itself,
+            we can avoid duplication of methods and properties, thus reducing the amount of memory used
+          </aside>
+          </section>
+          <section>
+            <img class="m-auto" src="assets/prototype-inheritence-js.png" alt="">
+          </section>
+        </section>
+
+        <!-- Factory Pattern -->
+        <section>
+          <section>
+            <h3>Factory Pattern</h3>
+            <pre>
+              <code data-noescape data-trim>
+                const createUser = ({ role, firstName, lastName, email }) => ({
+                  role,
+                  firstName,
+                  lastName,
+                  email,
+                  fullName() {
+                    return `${this.firstName} ${this.lastName}`;
+                  },
+                });
+
+                const user1 = createUser({
+                  firstName: "John",
+                  lastName: "Doe",
+                  email: "john@doe.com"
+                });
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <code data-noescape data-trim>
+                switch (userRole) {
+                  case 'admin': {
+                    createUser('admin', ...);
+                    break;
+                  }
+                  case 'owner': {
+                    createUser('owner', ...);
+                    break;
+                  }
+                  case 'sales': {
+                    createUser('sales', ...);
+                    break;
+                  }
+              </code>
+            </pre>
+          </section>
+        </section>
+
+        <!-- Singleton -->
+        <section>
+          <section>
+            <h3>Singleton pattern</h3>
+            <img class="m-auto w-1/2" src="https://i.redd.it/6jaw0ng62jea1.jpg" alt="">
+          </section>
+          <section>
+            <pre>
+              <code class="text-sm" data-noescape data-trim>
+                let instance;
+                let counter = 0;
+
+                class Counter {
+                  constructor() {
+                    if (instance) {
+                      throw new Error("You can only create one instance!");
+                    }
+                    instance = this;
+                  }
+
+                  getInstance() {
+                    return this;
+                  }
+
+                  getCount() {
+                    return counter;
+                  }
+
+                  increment() {
+                    return ++counter;
+                  }
+
+                  decrement() {
+                    return --counter;
+                  }
+                }
+
+                const counter1 = new Counter();
+                const counter2 = new Counter();
+                // Error: You can only create one instance!
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>State management in React in some king of Singleton pattern</h3>
+            <aside class="notes">
+              In React, we often rely on a global state through state management tools such as Redux or React Context instead of using Singletons.
+              Although their global state behavior might seem similar to that of a Singleton, these tools provide a read-only state
+              rather than the mutable state of the Singleton. When using Redux, only pure function reducers can update the state,
+              after a component has sent an action through a dispatcher.
+              <br>
+              <br>
+              Although the downsides to having a global state don't magically disappear by using these tools,
+              we can at least make sure that the global state is mutated the way we intend it,
+              since components cannot update the state directly.
+            </aside>
+          </section>
+          <section>
+            <small>From official redux documentation</small>
+            <img src="assets/redux-singleton.png" alt="">
+            <aside class="notes">
+              Подібним чином, хоча ви можете посилатися на свій екземпляр store, імпортувавши його безпосередньо,
+              це не рекомендований шаблон у Redux. Якщо ви створите екземпляр магазину та експортуєте його з модуля,
+              він стане єдиним елементом. Це означає, що буде важче виділити програму Redux як компонент більшої програми,
+              якщо це колись буде необхідно, або ввімкнути рендеринг на сервері, оскільки на сервері ви хочете створити
+              окремі екземпляри store для кожного запиту.
+            </aside>
+          </section>
+          <section>
+            <h3>Angular can have singleton service</h3>
+            <small class="center">A singleton service is a service for which only one instance exists in an application.</small>
+          </section>
+          <section>
+            <p class="!text-2xl">There are two ways to make a service a singleton in Angular:</p>
+            <ul class="!text-xl">
+              <li class="fragment">Set the <code>providedIn</code> property of the <code>@Injectable()</code> to <code>"root"</code></li>
+              <li class="fragment">Include the service in the <code>AppModule</code> or in a module that is only imported by the <code>AppModule</code></li>
+            </ul>
+          </section>
+          <section>
+            <pre>
+              <code data-noescape data-trim>
+                import { Injectable } from '@angular/core';
+
+                @Injectable({
+                  providedIn: 'root',
+                })
+                export class UserService {
+                }
+              </code>
+            </pre>
+            <aside class="notes">
+              'root' : The application-level injector in most apps.
+              <br>
+              <br>
+              'platform' : A special singleton platform injector shared by all applications on the page.
+              <br>
+              <br>
+              'any' : Provides a unique instance in each lazy loaded module while all eagerly loaded modules share one instance. This option is DEPRECATED.
+              <br>
+              <br>
+              That is, in the case of React, we have one singleton for the entire application, and here we can determine what we can have this singleton for.
+            </aside>
+          </section>
+          <section>
+            <pre>
+              <code data-noescape data-trim>
+                @Component({ … })
+                class UserComponent {
+                  constructor(private userService: UserService) {}
+                }
+              </code>
+            </pre>
+            <aside class="notes">
+              The most common way to inject a dependency is to declare it in a class constructor.
+              When Angular creates a new instance of a component, directive, or pipe class,
+              it determines which services or other dependencies that class needs by looking at the constructor
+              parameter types. For example, if the HeroListComponent needs the HeroService,
+              the constructor can look like this:
+              <br>
+              <br>
+              When Angular discovers that a component depends on a service, it first checks if the injector has any
+              existing instances of that service. If a requested service instance doesn't yet exist, the injector
+              creates one using the registered provider, and adds it to the injector before returning the service to Angular.
+              <br>
+              When all requested services have been resolved and returned, Angular can call the component's constructor
+              with those services as arguments.
+            </aside>
+          </section>
+        </section>
+
+        <!-- Bridge -->
+        <section>
+          <section>
+            <h3>Bridge pattern</h3>
+          </section>
+          <section>
+            <h3>What is Abstraction</h3>
+            <h6>Abstraction is high-level control layer for some entities.</h6>
+            <aside class="notes">
+              Abstract class should delegate work to the implementation layer.
+              <br>
+              <br>
+              Bridge is a structural design pattern that lets you split a large class or a set of closely
+              related classes into two separate hierarchies—abstraction and implementation—which can be
+              developed independently of each other.
+            </aside>
+          </section>
+          <section>
+            <h3>ControlValueAccessor</h3>
+            Defines an interface that acts as a bridge between the Angular forms API and a native element in the DOM.
+          </section>
+          <section>
+            <pre>
+              <code data-noescape data-trim>
+                interface ControlValueAccessor {
+                  writeValue(obj: any): void
+                  registerOnChange(fn: any): void
+                  registerOnTouched(fn: any): void
+                  setDisabledState(isDisabled: boolean)?: void
+                }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>Class implementations</h3>
+            <p>CheckboxControlValueAccessor</p>
+            <p>DefaultValueAccessor</p>
+            <p>NumberValueAccessor</p>
+            <p>RadioControlValueAccessor</p>
+            <p>RangeValueAccessor</p>
+            <p>SelectControlValueAccessor</p>
+            <p>SelectMultipleControlValueAccessor</p>
+          </section>
+          <section>
+            <img class="m-auto" src="assets/value-accessor-bridge.png" alt="">
+          </section>
+          <section>
+            <img class="m-auto" src="assets/value-accessor-use.png" alt="">
+          </section>
+          <section>
+            <img class="m-auto" src="assets/ng-control-bridge.png" alt="">
+            <aside class="notes">
+              NgControl is a base class that all FormControl-based directives extend. It binds a FormControl object to a DOM element.
+              This allows us to manage both reactive and templated forms.
+            </aside>
+          </section>
+        </section>
+
+        <!-- Strategy -->
+        <section>
+          <section>
+            <h3>Strategy pattern</h3>
+            <aside class="notes">
+              Strategy pattern is used when we have multiple algorithm for specific task and client decide the actual implementation to be used at runtime.
+            </aside>
+          </section>
+          <section>
+            <h3>What is pipe in Angular</h3>
+            <img class="m-auto" src="assets/async-pipe.png" alt="">
+          </section>
+          <section>
+            <img class="m-auto" src="assets/async-pipe-strategy.png" alt="">
+          </section>
+          <section>
+            <img class="m-auto" src="assets/async-subscription-strategy.png" alt="">
+          </section>
+          <section>
+            <img class="m-auto" src="assets/select-strategy.png" alt="">
+          </section>
+        </section>
+
+        <!-- Decorator pattern -->
+        <section>
+          <section>
+            <h3>Decorator pattern</h3>
+            <h6>Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these
+              objects inside special wrapper objects that contain the behaviors.</h6>
+          </section>
+          <section>
+            <p>Class Decorators</p>
+            <p>Property Decorators</p>
+            <p>Method Decorators</p>
+            <p>Parameter Decorators</p>
+          </section>
+          <section>Decorators are an experimental feature that may change in future releases.</section>
+          <section>
+            <pre>
+              <code data-noescape data-trim>
+                export class IceCreamComponent {
+                  @Emoji()
+                  flavor = 'vanilla';
+                }
+              </code>
+            </pre>
+            <pre>
+              <code data-noescape data-trim>
+                // Property Decorator
+                function Emoji() {
+                  return function(target: Object, key: string | symbol) {
+
+                    let val = target[key];
+
+                    const getter = () =>  {
+                        return val;
+                    };
+                    const setter = (next) => {
+                        console.log('updating flavor...');
+                        val = `🍦 ${next} 🍦`;
+                    };
+
+                    Object.defineProperty(target, key, {
+                      get: getter,
+                      set: setter,
+                      enumerable: true,
+                      configurable: true,
+                    });
+                  };
+                }
+              </code>
+            </pre>
+          </section>
+          <section>
+            <pre>
+              <code data-noescape data-trim>
+                @Component(...)
+                export class AppComponent {
+                  @UseEffect()
+                  onEffect() {
+                    document.title = `You clicked ${this.count.value} times`;
+                  }
+                }
+              </code>
+            </pre>
+            <pre>
+              <code data-noescape data-trim>
+                /// Implementation Details:
+
+                function UseEffect() {
+                  return function (target, key, descriptor) {
+                    target.ngOnInit = descriptor.value;
+                    target.ngAfterViewChecked = descriptor.value;
+                  };
+                }
+              </code>
+            </pre>
+          </section>
+        </section>
+        <section>
+          <h3>Thank you!</h3>
+          <img class="m-auto" src="http://jsforcats.com/images/customers5.jpg" alt="">
+        </section>
+        <section>
+          <h3>Questions</h3>
+        </section>
+
+        <!-- Last Video slide -->
+        <section class="h-full flex justify-center align">
+          <iframe
+            width="100%"
+            height="80%"
+            src="https://www.youtube.com/embed/JEpY9C49sqU"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
